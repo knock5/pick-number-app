@@ -1,3 +1,4 @@
+require('../styles/main.css');
 const App = require('../views/app');
 
 const app = new App({
