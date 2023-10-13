@@ -15,6 +15,10 @@ const numGameRulesPage = {
       </div>
     `;
   },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  },
 };
 
 module.exports = numGameRulesPage;

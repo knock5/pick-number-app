@@ -19,6 +19,10 @@ const numGameHomePage = {
       </div>
     `;
   },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  },
 };
 
 module.exports = numGameHomePage;
