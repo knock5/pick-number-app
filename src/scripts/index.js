@@ -1,6 +1,6 @@
 require('../styles/main.css');
+require('../views/components/FooterBar');
 const App = require('../views/app');
-
 const app = new App({
   content: document.querySelector('#mainContent'),
 });

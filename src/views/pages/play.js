@@ -3,10 +3,10 @@ const numGamePlayPage = {
     return `
     <div class="container">
       <div class="wrap-header">
-        <div class="row head-ongame">
+        <div class="row head-game ongame">
           <div class="btn-wrap">
             <div>
-              <a href="#/" class="btn btn-back btn-link">Kembali</a>
+              <a href="#/" class="btn btn-back btn-link">Main Menu</a>
             </div>
           </div>
           <h1>Halaman Bermain</h1>
@@ -47,7 +47,7 @@ const numGamePlayPage = {
           </div>
 
           <div class="col">
-            <div class="local-stats" id="total-stats">
+            <div class="local-stats text-center" id="total-stats">
               <h2>Local Stats</h2>
               <hr />
               <div id="all-local-stats">
@@ -59,15 +59,13 @@ const numGamePlayPage = {
                   <h3>Jumlah tebakan salah terbanyak sekali main:</h3>
                   <h3 id="local-maximum-attempt-field" class="text-center"></h3>
                 </div>
-                <div class="text-center">
-                  <button class="btn btn-clear-data" id="destroy-data-button">
-                    Hapus semua data
-                  </button>
-                </div>
+                <button class="btn btn-clear-data" id="destroy-data-button">
+                  Hapus semua data
+                </button>
               </div>
             </div>
 
-            <div class="session-stats" id="session-stats">
+            <div class="session-stats text-center" id="session-stats">
               <h2>Game Session Stats</h2>
               <hr />
               <div id="all-session-stats">
@@ -153,6 +151,110 @@ const numGamePlayPage = {
     localMaximumAttemptField.innerText = localStorage.getItem(
       localMaximumAttemptsKey
     );
+
+    // functions
+    function getAnswer() {
+      let answer = '123'.split('');
+      for (let i = 0; i < answer.length; i++) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = answer[i];
+        answer[i] = answer[j];
+        answer[j] = temp;
+      }
+      return answer.join('');
+    }
+
+    function checkAnswer(userGuess) {
+      const answer = sessionStorage.getItem(sessionAnswerKey);
+      if (userGuess == answer) {
+        duringGameDisplay.setAttribute('hidden', true);
+        afterGameDisplay.removeAttribute('hidden');
+        sessionTrueAnswerField.innerText = answer;
+        updateScore();
+      } else {
+        const previousAttemptAmount = parseInt(
+          sessionStorage.getItem(sessionUserAttemptsKey)
+        );
+        sessionStorage.setItem(
+          sessionUserAttemptsKey,
+          previousAttemptAmount + 1
+        );
+        sessionUserAttemptsField.innerText = sessionStorage.getItem(
+          sessionUserAttemptsKey
+        );
+        sessionUserAnswerField.innerText = '';
+        sessionUserWrongAnswerField.innerText = userGuess;
+      }
+    }
+
+    function updateScore() {
+      const sessionAttemptsValue = parseInt(
+        sessionStorage.getItem(sessionUserAttemptsKey)
+      );
+      const localAttemptsValue = parseInt(
+        localStorage.getItem(localMaximumAttemptsKey)
+      );
+      if (sessionAttemptsValue > localAttemptsValue) {
+        localStorage.setItem(localMaximumAttemptsKey, sessionAttemptsValue);
+        localMaximumAttemptField.innerText = sessionAttemptsValue;
+      }
+      const previousTotalVictoryAmount = parseInt(
+        localStorage.getItem(localTotalVictoryKey)
+      );
+      localStorage.setItem(
+        localTotalVictoryKey,
+        previousTotalVictoryAmount + 1
+      );
+      localTotalVictoryField.innerText =
+        localStorage.getItem(localTotalVictoryKey);
+    }
+
+    playButton.addEventListener('click', function () {
+      sessionStorage.setItem(sessionAnswerKey, getAnswer());
+      beforeGameDisplay.setAttribute('hidden', true);
+      duringGameDisplay.removeAttribute('hidden');
+    });
+
+    // button answer
+    answerButton1.addEventListener('click', function () {
+      sessionUserAnswerField.innerText += '1';
+      if (sessionUserAnswerField.innerText.length == 3) {
+        checkAnswer(sessionUserAnswerField.innerText);
+      }
+    });
+
+    answerButton2.addEventListener('click', function () {
+      sessionUserAnswerField.innerText += '2';
+      if (sessionUserAnswerField.innerText.length == 3) {
+        checkAnswer(sessionUserAnswerField.innerText);
+      }
+    });
+
+    answerButton3.addEventListener('click', function () {
+      sessionUserAnswerField.innerText += '3';
+      if (sessionUserAnswerField.innerText.length == 3) {
+        checkAnswer(sessionUserAnswerField.innerText);
+      }
+    });
+
+    window.addEventListener('beforeunload', function () {
+      sessionUserAnswerField.innerText = '';
+      sessionUserWrongAnswerField.innerText = '';
+      sessionStorage.setItem(sessionUserAttemptsKey, 0);
+      sessionUserAttemptsField.innerText = sessionStorage.getItem(
+        sessionUserAttemptsKey
+      );
+    });
+
+    // clear all item storage
+    destroyDataButton.addEventListener('click', function () {
+      sessionStorage.removeItem(sessionAnswerKey);
+      sessionStorage.removeItem(sessionUserAttemptsKey);
+      sessionStorage.removeItem(sessionUserIsPlayingKey);
+      localStorage.removeItem(localTotalVictoryKey);
+      localStorage.removeItem(localMaximumAttemptsKey);
+      alert('Mohon me-refresh halaman ini kembali');
+    });
   },
 };
 

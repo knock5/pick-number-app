@@ -3,10 +3,10 @@ const numGameAboutPage = {
     return `
       <div class="container">
         <div class="wrap-header">
-          <div class="row head-ongame">
+          <div class="row head-game ongame">
             <div class="btn-wrap">
               <div>
-                <a href="#/" class="btn btn-back btn-link">Kembali</a>
+                <a href="#/" class="btn btn-back btn-link">Main Menu</a>
               </div>
             </div>
             <h1>Halaman About</h1>
