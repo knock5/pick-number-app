@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* color variable */
@@ -42,6 +43,14 @@
   color: var(--light);
   padding: 15px;
 }
+.btn-back {
+  color: var(--light);
+  border: 1px solid var(--light);
+}
+.btn-back:hover {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
 .head-game {
   justify-content: center;
   align-items: center;
@@ -55,14 +64,6 @@
   gap: 7%;
   flex-wrap: wrap;
   padding: 30px 0;
-}
-.wrap-game-board,
-.local-stats,
-.session-stats {
-  border: 1px solid black;
-  padding: 5px 30px;
-  border-radius: 15px;
-  margin: 10px 0;
 }
 
 /* home css */
@@ -108,6 +109,50 @@
 .btn-clear-data {
   background-color: orange;
 }
+hr {
+  border: 1px solid var(--primary);
+  margin: 10px 0;
+}
+.wrap-game-board,
+.local-stats,
+.session-stats {
+  border: 1px solid var(--primary);
+  padding: 15px 30px;
+  border-radius: 15px;
+  margin: 10px 0;
+  color: var(--primary);
+}
+.answer-button {
+  padding: 20px;
+  margin: 20px 5px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  color: var(--dark);
+  font-weight: bold;
+}
+.text-game {
+  padding: 20px 50px;
+}
+.text-answer-game {
+  color: var(--secondary);
+}
+.wrong-answer {
+  color: var(--light);
+}
+.local-stat-item {
+  padding: 10px;
+  margin: 10px 0;
+}
+.text-victory,
+.text-attempt {
+  color: var(--secondary);
+}
+.session-stat-item {
+  padding: 10px;
+}
+.text-amount {
+  color: var(--secondary);
+}
 
 /* rules css */
 .list-rules {
@@ -126,4 +171,23 @@
 .footer-link {
   text-decoration: none;
   color: var(--primary);
+}
+
+@media screen and (max-width: 530px) {
+  .head-game {
+    padding: 5px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  .btn-back {
+    font-size: 0.8rem;
+  }
+  .wrap-game-content {
+    padding: 0 10px;
+  }
+
+  .text-game {
+    padding: 20px 30px;
+  }
 }

@@ -9,7 +9,7 @@ const numGamePlayPage = {
               <a href="#/" class="btn btn-back btn-link">Main Menu</a>
             </div>
           </div>
-          <h1>Halaman Bermain</h1>
+          <h1>NumGame</h1>
         </div>
       </div>
 
@@ -20,58 +20,78 @@ const numGamePlayPage = {
               <h2 class="title-section">Game Board</h2>
               <hr />
               <div id="before-game-display">
-                <h3>Tekan tombol "Play" di bawah jika sudah siap</h3>
-                <button class="btn" id="play-button">Bermain</button>
+                <h4>Tekan tombol "Play" di bawah jika sudah siap</h4>
+                <button id="play-button" class="btn-play-game">
+                  Play
+                  <span></span>
+                </button>
               </div>
               <div id="during-game-display" hidden>
-                <h3>Silahkan menebak angka!</h3>
-                <h3>Jawaban Anda:</h3>
-                <h1>
-                  "<u><span id="session-user-answer-field"></span></u>"
-                </h1>
-                <button class="answer-button" id="answer-1-button">1</button>
-                <button class="answer-button" id="answer-2-button">2</button>
-                <button class="answer-button" id="answer-3-button">3</button>
-                <h3>
-                  "<span id="session-user-wrong-answer-field"></span>" salah,
+                <div class="text-game">
+                  <h4>Silahkan menebak angka!</h4>
+                  <h4>Jawaban Anda:</h4>
+                  <h2>
+                    "<u><span id="session-user-answer-field" class="text-answer-game"></span></u>"
+                  </h2>
+                </div>
+                <button class="btn-answer-play" id="answer-1-button">
+                  <span class="transition"></span>
+                  <span class="gradient"></span>
+                  <span class="label">1</span>
+                </button>
+                <button class="btn-answer-play" id="answer-2-button">
+                  <span class="transition"></span>
+                  <span class="gradient"></span>
+                  <span class="label">2</span>
+                </button>
+                <button class="btn-answer-play" id="answer-3-button">
+                  <span class="transition"></span>
+                  <span class="gradient"></span>
+                  <span class="label">3</span>
+                </button>
+                <h4>
+                  "<span id="session-user-wrong-answer-field" class="wrong-answer"></span>" salah,
                   coba lagi...
-                </h3>
+                </h4>
               </div>
               <div id="after-game-display" hidden>
-                <h3>Selamat Tebakan Anda benar!</h3>
-                <h3>Jawabannya adalah:</h3>
-                <h1>"<span id="session-true-answer-field"></span>"</h1>
-                <h3><i></i>Refresh halaman ini untuk mencoba lagi</h3>
+                <h4>Selamat Tebakan Anda benar!</h4>
+                <h4>Jawabannya adalah:</h4>
+                <h2>"<span id="session-true-answer-field"></span>"</h2>
+                <h4><i></i>Refresh halaman ini untuk mencoba lagi</h4>
               </div>
             </div>
           </div>
 
           <div class="col">
             <div class="local-stats text-center" id="total-stats">
-              <h2>Local Stats</h2>
+              <h3>Local Stats</h3>
               <hr />
               <div id="all-local-stats">
                 <div class="local-stat-item">
-                  <h3>Jumlah permainan yang berhasil dimenangkan:</h3>
-                  <h3 id="local-total-victory-field" class="text-center"></h3>
+                  <h4>Jumlah permainan yang berhasil dimenangkan:</h4>
+                  <h4 id="local-total-victory-field" class="text-center text-victory"></h4>
                 </div>
                 <div class="local-stat-item">
-                  <h3>Jumlah tebakan salah terbanyak sekali main:</h3>
-                  <h3 id="local-maximum-attempt-field" class="text-center"></h3>
+                  <h4>Jumlah tebakan salah terbanyak sekali main:</h4>
+                  <h4 id="local-maximum-attempt-field" class="text-center text-attempt"></h4>
                 </div>
-                <button class="btn btn-clear-data" id="destroy-data-button">
-                  Hapus semua data
+                <button class="noselect btn-delete-data" id="destroy-data-button">
+                  <span class="text">Delete</span>
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg>
+                  </span>
                 </button>
               </div>
             </div>
 
             <div class="session-stats text-center" id="session-stats">
-              <h2>Game Session Stats</h2>
+              <h3>Game Session Stats</h3>
               <hr />
               <div id="all-session-stats">
                 <div class="session-stat-item">
-                  <h3>Jumlah Tebakan Salah:</h3>
-                  <h3 id="session-user-attempts-amount-field" class="text-center"></h3>
+                  <h4>Jumlah Tebakan Salah:</h4>
+                  <h4 id="session-user-attempts-amount-field" class="text-center text-amount"></h4>
                 </div>
               </div>
             </div>
