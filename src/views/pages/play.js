@@ -2,6 +2,21 @@ const numGamePlayPage = {
   async render() {
     return `
     <div class="container">
+      <div id="modal-game" class="m-popup">
+        <div class="m-popup-content">
+          <div class="modal-header">
+            <h2>Info NumGame</h2>
+          </div>
+          <div class="modal-body">
+            <p>Data histori permainan telah dihapus</p>
+            <p>Silahkan refresh halaman ini untuk memulai permainan baru</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-close">Close</button>
+          </div>
+        </div>
+      </div>
+
       <div class="wrap-header">
         <div class="row head-game ongame">
           <div class="btn-wrap">
@@ -132,6 +147,8 @@ const numGamePlayPage = {
     const sessionUserAttemptsField = document.getElementById(
       'session-user-attempts-amount-field'
     );
+    const mpopup = document.getElementById('modal-game');
+    const btnClose = document.querySelector('.btn-close');
 
     //inisialiasi key untuk session storage
     const sessionAnswerKey = 'SESSION_ANSWER';
@@ -273,7 +290,13 @@ const numGamePlayPage = {
       sessionStorage.removeItem(sessionUserIsPlayingKey);
       localStorage.removeItem(localTotalVictoryKey);
       localStorage.removeItem(localMaximumAttemptsKey);
-      alert('Mohon me-refresh halaman ini kembali');
+
+      // show modal
+      mpopup.style.display = 'block';
+    });
+
+    btnClose.addEventListener('click', function () {
+      mpopup.style.display = 'none';
     });
   },
 };

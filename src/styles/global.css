@@ -198,6 +198,46 @@ hr {
   color: white;
 }
 
+/* modal css */
+.m-popup {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: rgb(3, 45, 60, 0.7);
+}
+.m-popup-content {
+  width: fit-content;
+  margin: 10% auto;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--dark);
+  border-radius: 12px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid var(--dark);
+}
+.modal-body {
+  padding: 10px;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+.modal-footer {
+  padding: 10px;
+  border-top: 1px solid var(--dark);
+}
+.btn-close {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
 /* footer css */
 .wrap-footer {
   background-color: var(--dark);
@@ -226,6 +266,18 @@ hr {
     padding: 0 10px;
   }
 
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    font-size: 0.7rem;
+  }
+  .m-popup {
+    height: 150%;
+  }
+  .m-popup-content {
+    margin: 60% auto;
+  }
+
   .text-game {
     padding: 20px 30px;
   }
@@ -238,5 +290,28 @@ hr {
 @media screen and (min-width: 531px) {
   .card-rules {
     width: 65%;
+  }
+}
+
+/* add animation effects */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
