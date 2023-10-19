@@ -18,7 +18,7 @@ const numGameRulesPage = {
                 </span>
               </div>
             </a>
-            <h1>Rules</h1>
+            <h1>NumGame</h1>
           </div>
         </div>
 
@@ -29,19 +29,21 @@ const numGameRulesPage = {
             <h4 align="center" class="subtext-rules">Selamat datang dalam NumGame, berikut instruksi-nya:</h4>
             <div class="list-rules row">
               <ul id="instructions-list" align="left">
-                <li class="rules-item">Anda harus mencari kombinasi angka yang terdiri dari angka "1", "2", dan "3",
-                  misalnya "231" dan "123".
+                <li class="rules-item">Anda harus mencari kombinasi angka yang terdiri dari angka <span class="h-rules">"1"</span>, <span class="h-rules">"2"</span>, dan <span class="h-rules">"3"</span>,
+                  misalnya <span class="h-rules">"231"</span> dan <span class="h-rules">"123"</span>.
                 </li>
                 <li class="rules-item">Angka yang ditebak hanya memiliki panjang 3 karakter saja,
-                  sehingga kombinasi seperti "1231" tidak akan menjadi jawaban.
+                  sehingga kombinasi seperti <span class="h-rules">"1231"</span> tidak akan menjadi jawaban.
                 </li>
                 <li class="rules-item">Sebuah angka hanya akan muncul sekali dan hanya sekali,
-                  sehingga kombinasi seperti "223" maupun "111" tidak akan menjadi jawaban.
+                  sehingga kombinasi seperti <span class="h-rules">"223"</span> maupun <span class="h-rules">"111"</span> tidak akan menjadi jawaban.
                 </li>
                 <li class="rules-item"><i>Have fun and don't cheat!</i></li>
               </ul>
             </div>
           </div>
+        </div>
+
       </div>
     `;
   },

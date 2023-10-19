@@ -165,6 +165,9 @@ hr {
   border-radius: 12px;
   color: var(--primary);
 }
+.h-rules {
+  color: var(--light);
+}
 .subtext-rules {
   padding: 15px 0;
 }
@@ -174,6 +177,25 @@ hr {
 }
 .rules-item {
   margin: 10px 0;
+}
+
+/* about css */
+.title-about {
+  padding: 10px 0;
+}
+.about-content {
+  text-align: justify;
+}
+.about-content > p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.link-repo {
+  text-decoration: none;
+  color: var(--secondary);
+}
+.link-repo:hover {
+  color: white;
 }
 
 /* footer css */
@@ -206,6 +228,10 @@ hr {
 
   .text-game {
     padding: 20px 30px;
+  }
+
+  .about-content > p {
+    font-size: 0.7rem;
   }
 }
 
