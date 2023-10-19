@@ -4,31 +4,41 @@ const numGameRulesPage = {
       <div class="container">
         <div class="wrap-header">
           <div class="row head-game ongame">
-            <div class="btn-wrap">
-              <div>
-                <a href="#/" class="btn btn-back btn-link">Main Menu</a>
+            <a href="#/" class="button-back">
+              <div class="button-box">
+                <span class="button-elem">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 40">
+                    <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                  </svg>
+                </span>
+                <span class="button-elem">
+                  <svg viewBox="0 0 46 40">
+                    <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                  </svg>
+                </span>
               </div>
-            </div>
-            <h1>Halaman Rules</h1>
+            </a>
+            <h1>Rules</h1>
           </div>
         </div>
 
-        <div class="wrap-rules">
+        <div class="wrap-rules row">
+          <div class="card-rules">
             <h2 align="center">Cara bermain</h2>
             <hr>
-            <h3 align="center">Selamat datang dalam Number Game, berikut instruksi-nya:</h3>
+            <h4 align="center" class="subtext-rules">Selamat datang dalam NumGame, berikut instruksi-nya:</h4>
             <div class="list-rules row">
               <ul id="instructions-list" align="left">
-                <li>Anda harus mencari kombinasi angka yang terdiri dari angka "1", "2", dan "3",
+                <li class="rules-item">Anda harus mencari kombinasi angka yang terdiri dari angka "1", "2", dan "3",
                   misalnya "231" dan "123".
                 </li>
-                <li>Angka yang ditebak hanya memiliki panjang 3 karakter saja,
+                <li class="rules-item">Angka yang ditebak hanya memiliki panjang 3 karakter saja,
                   sehingga kombinasi seperti "1231" tidak akan menjadi jawaban.
                 </li>
-                <li>Sebuah angka hanya akan muncul sekali dan hanya sekali,
+                <li class="rules-item">Sebuah angka hanya akan muncul sekali dan hanya sekali,
                   sehingga kombinasi seperti "223" maupun "111" tidak akan menjadi jawaban.
                 </li>
-                <li><i>Have fun and don't cheat!</i></li>
+                <li class="rules-item"><i>Have fun and don't cheat!</i></li>
               </ul>
             </div>
           </div>

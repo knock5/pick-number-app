@@ -155,8 +155,25 @@ hr {
 }
 
 /* rules css */
-.list-rules {
+.wrap-rules {
+  padding: 40px 20px;
   justify-content: center;
+}
+.card-rules {
+  border: 1px solid var(--primary);
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: var(--primary);
+}
+.subtext-rules {
+  padding: 15px 0;
+}
+.list-rules {
+  padding: 5px 10px;
+  justify-content: center;
+}
+.rules-item {
+  margin: 10px 0;
 }
 
 /* footer css */
@@ -189,5 +206,11 @@ hr {
 
   .text-game {
     padding: 20px 30px;
+  }
+}
+
+@media screen and (min-width: 531px) {
+  .card-rules {
+    width: 65%;
   }
 }
