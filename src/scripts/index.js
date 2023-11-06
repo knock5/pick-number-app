@@ -1,3 +1,4 @@
+require('regenerator-runtime');
 require('../styles/main.css');
 require('../views/components/FooterBar');
 const App = require('../views/app');
